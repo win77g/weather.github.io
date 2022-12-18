@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  // api_base : 'http://127.0.0.1:8000/api'
+  api_base: 'https://serg19.pythonanywhere.com/api'
 };
 
 /*

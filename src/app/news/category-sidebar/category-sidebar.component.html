@@ -1,0 +1,7 @@
+<div class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <ul *ngFor="let item of category_list" class="arrow-list">
+      <li><a [routerLink] ="['/news_from_category/', item.name]">{{item.name}}</a></li>
+  
+    </ul>
+  </div>

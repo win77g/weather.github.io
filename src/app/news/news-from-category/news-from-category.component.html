@@ -1,0 +1,37 @@
+<main class="main-content">
+	<div class="container">
+		<div class="breadcrumb">
+			<a routerLink ="">Home</a>
+			<a routerLink ="/news">News</a>
+			<span>{{category_list_title}}</span>
+		</div>
+	</div>
+
+
+	<div class="fullwidth-block">
+		<div class="container">
+			<div class="row">
+				<div class="content col-md-8">
+					<div *ngFor="let item of news_category_list" class="post single">
+						<h2 class="entry-title">{{item.name}}</h2>
+						<div class="featured-image"><img src="{{item.image}}" alt=""></div>
+
+						<div class="entry-content">
+							<p>{{item.description}}</p>
+							<a [routerLink] ="['/news', item.id]" class="button">Read more</a>
+						</div>
+
+					</div>
+
+				</div>
+				<div class="sidebar col-md-3 col-md-offset-1">
+
+					 <app-category-sidebar></app-category-sidebar>
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+

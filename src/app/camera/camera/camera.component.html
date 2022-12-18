@@ -1,0 +1,36 @@
+<main class="main-content">
+    <div class="container">
+        <div class="breadcrumb">
+            <a routerLink ="">Home</a>
+            <span>Live cameras</span>
+        </div>
+    </div>
+
+    <div class="fullwidth-block">
+        <div class="container">
+            <div class="filter">
+                <div class="country filter-control">
+                    <form [formGroup]="form" >
+                    <label for="">Country</label>
+                    <span class="select control">
+                        <select  formControlName="country" (click)="onSubmit()">
+                              <option [ngValue]="null"> Select Country </option>
+                            <option *ngFor="let item of country" [value]="item.name">{{item.name}}</option>
+                        </select>
+                    </span>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div *ngFor="let item of country_list" class="col-md-3 col-sm-6">
+                     <div class="video-container">
+                         <iframe class="embed-responsive-item" [src]=" item.url | safe " allowfullscreen ></iframe>
+                     </div>
+                     <small class="date">{{item.country}}.{{item.city}}</small>
+                     <h3 class="location">{{item.name}}</h3>
+              </div>
+            </div>
+        </div>
+    </div>
+
+</main> <!-- .main-content -->

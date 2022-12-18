@@ -1,0 +1,113 @@
+<div *ngFor="let item of baner" class="hero" [ngStyle]="{'background-image':' url('+item.image+')'}">
+
+    <div class="container">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" action="#" class="find-location">
+
+        <input type="text" formControlName="city"  placeholder="Find your location...">
+        <input [disabled]="form.invalid" type="submit" value="Find">
+
+      </form>
+
+    </div>
+  </div>
+  <div *ngIf="city" class="forecast-table">
+    <div class="container">
+      <div class="forecast-container">
+
+        <div  class="today forecast">
+          <div class="forecast-header">
+            <div class="day"></div>
+            <div class="date">{{date}}</div>
+          </div> <!-- .forecast-header -->
+          <div  class="forecast-content">
+            <div class="location">
+              {{qwe.city.name}}
+            </div>
+            <div class="degree">
+              <div class="num">{{temp | number:'1.0-0'}}<sup>o</sup>C</div>
+              <div class="forecast-icon">
+                <img src="http://openweathermap.org/img/wn/{{icon}}@2x.png" alt=""  width=100>
+              </div>
+            </div>
+            <span><img src="assets/images/icon-umberella.png" alt="">{{humidity}}%</span>
+            <span><img src="assets/images/icon-wind.png" alt="">{{wind_speed}}km/h</span>
+            <span><img src="assets/images/icon-compass.png" alt="">{{wind_deg}}</span>
+          </div>
+        </div>
+        <div class="forecast">
+          <div class="forecast-header">
+            <div class="day">{{date_1 }}</div>
+          </div> <!-- .forecast-header -->
+          <div class="forecast-content">
+            <div class="forecast-icon">
+              <img src="http://openweathermap.org/img/wn/{{weather_1_icon}}@2x.png" alt="" width=48>
+            </div>
+            <div class="degree">{{weather_1_temp_max | number:'1.0-0'}}<sup>o</sup>C</div>
+            <small>{{weather_1_temp_min | number:'1.0-0'}}<sup>o</sup></small>
+          </div>
+        </div>
+        <div class="forecast">
+          <div class="forecast-header">
+            <div class="day">{{date_2 }}</div>
+          </div> <!-- .forecast-header -->
+          <div class="forecast-content">
+            <div class="forecast-icon">
+              <img src="http://openweathermap.org/img/wn/{{weather_2_icon}}@2x.png" alt="" width=48>
+            </div>
+            <div class="degree">{{weather_2_temp_max | number:'1.0-0'}}<sup>o</sup>C</div>
+            <small>{{weather_2_temp_min | number:'1.0-0'}}<sup>o</sup></small>
+          </div>
+        </div>
+        <div class="forecast">
+          <div class="forecast-header">
+            <div class="day">{{date_3 }}</div>
+          </div> <!-- .forecast-header -->
+          <div class="forecast-content">
+            <div class="forecast-icon">
+              <img src="http://openweathermap.org/img/wn/{{weather_3_icon}}@2x.png" alt="" width=48>
+            </div>
+            <div class="degree">{{weather_3_temp_max | number:'1.0-0'}}<sup>o</sup>C</div>
+            <small>{{weather_3_temp_min | number:'1.0-0'}}<sup>o</sup></small>
+          </div>
+        </div>
+        <div class="forecast">
+          <div class="forecast-header">
+            <div class="day">{{date_4 }}</div>
+          </div> <!-- .forecast-header -->
+          <div class="forecast-content">
+            <div class="forecast-icon">
+              <img src="http://openweathermap.org/img/wn/{{weather_4_icon}}@2x.png" alt="" width=48>
+            </div>
+            <div class="degree">{{weather_4_temp_max | number:'1.0-0'}}<sup>o</sup>C</div>
+            <small>{{weather_4_temp_min | number:'1.0-0'}}<sup>o</sup></small>
+          </div>
+        </div>
+        <div class="forecast">
+          <div class="forecast-header">
+            <div class="day">{{date_5 }}</div>
+          </div> <!-- .forecast-header -->
+          <div class="forecast-content">
+            <div class="forecast-icon">
+              <img src="http://openweathermap.org/img/wn/{{weather_5_icon}}@2x.png" alt="" width=48>
+            </div>
+            <div class="degree">{{weather_5_temp_max | number:'1.0-0'}}<sup>o</sup>C</div>
+            <small>{{weather_5_temp_min | number:'1.0-0'}}<sup>o</sup></small>
+          </div>
+        </div>
+        <div class="forecast">
+          <div class="forecast-header">
+            <div class="day">{{date_6 }}</div>
+          </div> <!-- .forecast-header -->
+          <div class="forecast-content">
+            <div class="forecast-icon">
+              <img src="http://openweathermap.org/img/wn/{{weather_6_icon}}@2x.png" alt="" width=48>
+            </div>
+            <div class="degree">{{weather_6_temp_max | number:'1.0-0'}}<sup>o</sup>C</div>
+            <small>{{weather_6_temp_min | number:'1.0-0'}}<sup>o</sup></small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <main class="main-content">
+<app-live-camera-home></app-live-camera-home>
